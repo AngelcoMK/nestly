@@ -1,0 +1,50 @@
+.stay-card {
+  width: 100%;
+  max-width: 360px;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stay-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+}
+
+.stay-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.stay-info {
+  padding: 18px;
+}
+
+.stay-info h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.stay-info p {
+  margin: 8px 0;
+  color: #555;
+}
+
+.stay-info button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #ff385c;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.stay-info button:hover {
+  background: #e31c5f;
+}

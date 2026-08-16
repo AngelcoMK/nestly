@@ -1,0 +1,27 @@
+<div class="stay-card">
+  <img [src]="stay().image" [alt]="stay().title">
+
+  <div class="stay-info">
+    <h2>{{ stay().title }}</h2>
+
+    <p>{{ stay().location }}</p>
+
+    <p>{{ stay().description }}</p>
+
+    <p>{{ stay().pricePerNight | currency:'EUR':'symbol':'1.0-0' }} / night</p>
+
+    <p>⭐ {{ stay().rating }}</p>
+
+    @if (stay().superhost) {
+      <p appHighlight>Superhost</p>
+    }
+
+    <button (click)="onFavorite()">
+      @if (isFavorite()) {
+        💔 Unfavorite
+      } @else {
+        ❤️ Favorite
+      }
+    </button>
+  </div>
+</div>
