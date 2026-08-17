@@ -1,0 +1,12 @@
+<h1>Nestly</h1>
+
+<p>Find your perfect stay in Macedonia.</p>
+
+<div>
+  @for (stay of stays; track stay.id) {
+    <app-stay-card
+      [stay]="stay"
+      (favorite)="onFavorite($event)">
+    </app-stay-card>
+  }
+</div>

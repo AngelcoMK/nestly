@@ -1,12 +1,13 @@
-<h1>Nestly</h1>
+<nav>
+  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+    Home
+  </a>
 
-<p>Find your perfect stay in Macedonia.</p>
+  <a routerLink="/stays/1" routerLinkActive="active">
+    Example Stay
+  </a>
+</nav>
 
-<div>
-  @for (stay of stays; track stay.id) {
-    <app-stay-card
-      [stay]="stay"
-      (favorite)="onFavorite($event)">
-    </app-stay-card>
-  }
-</div>
+<main>
+  <router-outlet />
+</main>

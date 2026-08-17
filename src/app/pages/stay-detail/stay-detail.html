@@ -1,0 +1,31 @@
+@if (stay) {
+  <h1>{{ stay.title }}</h1>
+
+  <p>{{ stay.location }}</p>
+
+  <img
+    [src]="stay.image"
+    [alt]="stay.title"
+    width="500"
+  />
+
+  <p>{{ stay.description }}</p>
+
+  <p>
+    <strong>€{{ stay.pricePerNight }}</strong> / night
+  </p>
+
+  <p>⭐ {{ stay.rating }}</p>
+
+  @if (stay.superhost) {
+    <p>🏆 Superhost</p>
+  }
+
+  <a routerLink="/">← Back to stays</a>
+} @else {
+  <h1>Stay not found</h1>
+
+  <p>Sorry, we couldn't find that stay.</p>
+
+  <a routerLink="/">← Back to stays</a>
+}
