@@ -1,27 +1,43 @@
-<div class="stay-card">
-  <img [src]="stay().image" [alt]="stay().title">
+<article class="stay-card" appHighlight>
 
-  <div class="stay-info">
+  <img
+    [src]="stay().image"
+    [alt]="stay().title"
+  />
+
+  <div class="stay-content">
+
     <h2>{{ stay().title }}</h2>
 
-    <p>{{ stay().location }}</p>
+    <p class="location">{{ stay().location }}</p>
 
-    <p>{{ stay().description }}</p>
+    <p class="description">
+      {{ stay().description | truncate:60 }}
+    </p>
 
-    <p>{{ stay().pricePerNight | currency:'EUR':'symbol':'1.0-0' }} / night</p>
+    <div class="stay-info">
+      <strong>{{ stay().pricePerNight | currency:'EUR' }}</strong>
+      <span> / night</span>
+    </div>
 
-    <p>⭐ {{ stay().rating }}</p>
+    <app-badge>
+      ⭐ {{ stay().rating }}
+    </app-badge>
 
     @if (stay().superhost) {
-      <p appHighlight>Superhost</p>
+      <app-badge>
+        Superhost
+      </app-badge>
     }
 
     <button (click)="onFavorite()">
       @if (isFavorite()) {
-        💔 Unfavorite
+        ❤️ Unfavorite
       } @else {
-        ❤️ Favorite
+        🤍 Favorite
       }
     </button>
+
   </div>
-</div>
+
+</article>
